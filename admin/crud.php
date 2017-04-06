@@ -133,4 +133,21 @@
 
 
       }
+      //make a new admin user//
+      public function ADMININSERT($email,$password) 
+      {
+        $sql="INSERT  user(`email`,`password`)VALUES('$email','$password')";
+        $result=$this->conn->query($sql);
+        return $result;
+
+      }
+
+      //for site update setting//
+      public function INSERTSETTING($sitename,$footername,$logo)
+      {
+        $sql="INSERT INTO setting(`sitename`,`footername`,`logo`)values('$sitename','$footername','$logo')";
+        $result=$this->conn->query($sql);
+       
+        return $result;
+      }
 	 }

@@ -1,3 +1,10 @@
+<?php
+      // include('slider.php');
+
+?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -11,10 +18,7 @@
 </head>
 <body>
       <form method="post" action="" enctype="mutipart/form-data"><br><br />
-      <?php
-      include('slider.php');
-
-      ?>
+      
       <div class="container"> 
       <a href="multiplefile.php" class="btn btn-warning">ADD MULTIEIMAGE</a><br><br />
       

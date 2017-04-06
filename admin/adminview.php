@@ -1,3 +1,7 @@
+<?php
+ 		 include('slider.php');
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +15,7 @@
 </head>
 <body>
  	<form method="post" action="controller.php" >
- 	<?php
- 		include('slider.php');
- 	?>
+ 	
  	<div class="container">
  		 <table border='1px' class="table">
  		     <tr>
@@ -41,6 +43,9 @@
  		 </table>
  	</div>	 	  
  	</form>
+ 	<div class="container">
+ 	<a href="updatesite.php" class="btn btn-danger">WEBSITE SETING</a>
+ 	</div>
 </body>
 </html>
 

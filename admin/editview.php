@@ -1,5 +1,5 @@
 <?php
-	 
+	 include('slider.php');
 	 $conn = new mysqli("localhost","root","",100);
 	
 	 
@@ -19,10 +19,11 @@
 </head>
 <body>
 	<form method="post" action="controller.php?ad_id=<?php echo $id; ?>"  onsubmit= "return validation()">
-	
-	email<input name="email"  value="<?php echo  $result['email']; ?>"><br />
-	password<textarea name="password"  ><?php echo  $result['password']; ?></textarea><br />
-	<input type="submit" name="adminupdate" value="UPDATE">	
+	<div class="container">
+	email<input type="text" name="email"  value="<?php echo  $result['email']; ?>"><br />
+	password<input type="text" name="password"  value="<?php echo  $result['password']; ?>"><br />
+	<input type="submit" name="adminupdate" value="UPDATE" class="btn btn-success">	
+	</div>
 	</form>
 </body>
 </html>

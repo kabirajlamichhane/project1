@@ -1,4 +1,5 @@
 <?php
+	include('slider.php');
 	 $conn = new mysqli("localhost","root","",100);
 	
 	 
@@ -15,19 +16,24 @@
 <head>
 	<title>new page</title>
 	<script src="JS/newscript.js"></script>
+	<script src="ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<form method="post" action="controller.php?edit_id=<?php echo $id; ?>" enctype="multipart/form-data" onsubmit= "return validation()">
 	
-	
-	 <input type="hidden" name="id" value="<?php echo $id?>">
+	<div class="container">
+	<input type="hidden" name="id" value="<?php echo $id?>">
 	TITLE:
-	<input name="title" id="title" value="<?php echo  $result['title']; ?>" rows="5" cols="25"><br />
+	&nbsp &nbsp &nbsp &nbsp<input name="title"  value="<?php echo  $result['title']; ?>" ><br />
 	CONTENT:
-	<textarea name="content"  id="content" rows="7" cols="50"><?php echo  $result['content']; ?></textarea><br />
-	<input type="file" name="image" value="<?php echo  $result['image']; ?>"/>
+	<textarea name="content" rows="5" cols="50" ><?php echo  $result['content']; ?></textarea><br />
+	<input type="file" name="image" class="btn btn-warning" value="<?php echo  $result['image']; ?>"/><br/>
 	<!-- <input type="hidden" name="$img" value="<?php echo $img;?>" /> -->
-	<input type="submit" name="update" value="EDIT">	
+	<input type="submit" name="update" value="EDIT" class="btn btn-success">
+	</div>	
 	</form>
 </body>
 </html>
+<script >
+	CKEDITOR.replace('content');
+</script>

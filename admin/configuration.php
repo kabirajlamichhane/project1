@@ -1,5 +1,5 @@
 <?php
-	
+	 include('slider.php');
 	session_start();
 
 	if(!isset($_SESSION['email']))
@@ -21,13 +21,13 @@
 <body>
     <form method="post" action="admincontroller.php">
     <div class="container">
-    <?php
-    	include('slider.php');
-    ?>
+    
     	<h3>just for configuration</h3> 
      	email &nbsp  &nbsp  &nbsp<input type="text" name="email" placeholder="your eamil"><br><br />
      	password<input type="password" name="password" placeholder="your password"><br><br />
-     	<input type="submit" name="check" value="update" class="btn btn-info">
+     	<input type="submit" name="check" value="update" class="btn btn-info"><br><br/>
+        <a href="newuser.php" class="btn btn-success">create a new user</a>
+
     </div> 	
     </form>
 </body>

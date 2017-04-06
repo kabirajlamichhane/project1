@@ -1,3 +1,8 @@
+<?php
+      include('slider.php');
+?>  
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +13,9 @@
     <script src="static/script/script.js"></script>
 	
 <body>
+  
    <form method="post" action="controller.php" enctype="multipart/form-data">
-   <?php
-   		include('slider.php');
-   ?>
+  
    <div class="container">
    <h3>MULTIPLE FILE</h3>
 </head>

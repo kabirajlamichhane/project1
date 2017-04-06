@@ -1,0 +1,20 @@
+*
+	{
+		margin: 0px;
+		padding: 0px;
+	}
+body
+	{
+		/*background-image: url('../../image/g1.jpg');*/
+	}
+
+label
+	{
+		color: darkred;
+
+	}
+h2
+	{
+		padding: 15px;
+
+	}

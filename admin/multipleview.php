@@ -1,9 +1,10 @@
 <?php
+  include('slider.php');
   session_start();
 
   if(!isset($_SESSION['email']))
   {
-    header('location:loginform.php');
+    header('location:index.php');
   }
 
 ?>
@@ -20,6 +21,7 @@
 </head>
 <body>
       <form method="post" action="" enctype="mutipart/form-data">
+      <div class="container">
       <table border='2px' class="table">
         <tr class="success">
             <th>id</th>
@@ -30,7 +32,7 @@
 
 
 <?php
-    include('slider.php');
+    // include('slider.php');
     include('crud.php');
     $obj = new crud;
     $res=$obj->IMGSELECT();
@@ -44,7 +46,7 @@
     }
 ?>           
           </table>
-
+        </div> 
       </form>
 </body>
 </html>

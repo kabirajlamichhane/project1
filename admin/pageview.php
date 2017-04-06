@@ -1,10 +1,10 @@
 <?php
 session_start();
-
+ include('slider.php');
 
 	if(!isset($_SESSION['email']))
 	{
-		header('location:loginform.php');
+		header('location:index.php');
 	}
 ?>
 
@@ -19,9 +19,7 @@ session_start();
 </head>
 <body>
  	<form method="post" action=""  >
-	<?php
-		include('slider.php');
-	?>
+	
 	<div class="container">
 	<a href="newpage.php" class="btn btn-info" role="button">ADD PAGE</a> <br><br />
 	<table border='1px' class="table">

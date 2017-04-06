@@ -10,10 +10,12 @@
 
 		$email=$_POST['email'];
 		$password=$_POST['password'];
+		// $password=md5($_POST['password']);
 		$res=$obj->LOGIN($email,$password);
-		  // print_r($res);die;
+		 // print_r($res);die;
 		if ($res->num_rows == 1) 
 		{
+			
 		$_SESSION['email']=$email;
 		//remeber function//
 			$result=$obj->REMEMBERME();
@@ -68,8 +70,7 @@
 		if(!empty($title) && !empty($content) && !empty($image))
 	 	{
 			$res=$obj->INSERT($title,$content,$image);
-		  	 // print_r($res);
-          	//die();
+			 // print_r($res);die;
 			if($res)
 			{
 			 	header('location:pageview.php');
@@ -82,6 +83,7 @@
 			else
 	 		{
 				 header('location:newpage.php?error=1');
+
 	 		}
 	
 	}
@@ -192,6 +194,7 @@
 		$folder="image";
 		move_uploaded_file($tmp_name, $folder.$image);
 		$res=$obj->INSERTIMAGES($pid,$image);
+		// print_r($res);die;
 		if($res)
 		{
 			header('location:imageview.php');
@@ -203,30 +206,32 @@
 	}
 
 
-	//forgot password//
-	if(isset($_POST['forgot']))
-	{
-		$email=$_POST['email'];
-		$res=$obj->forgot($email);
-		$row=mysqli_fetch_assoc($res);
+	// //forgot password//
+	// if(isset($_POST['forgot']))
+	// {
+	// 	$email=$_POST['email'];
+	// 	$res=$obj->forgot($email);
+	// 	$row=mysqli_fetch_assoc($res);
 
-		 // print_r($row);die;
-		if($res)
-		{
-			echo "this is your password".$row['password'] ;
-		}
-		else
-		{
-			echo "not match your mail";
-		}
+	// 	// print_r($row);die;
+	// 	if($res)
+	// 	{
+	// 		// echo "this is your password".$row['password'] ;
+	// 		header('location:verification.php');
+	// 	}
+	// 	else
+	// 	{
+	// 		echo "not match your mail";
+	// 	}
 	
-	}	
+	// }	
 	//update email  password//
 	if(isset($_POST['adminupdate']))
 	{
 		$id=$_GET['ad_id'];
 		$email=$_POST['email'];
 		$password=$_POST['password'];
+		// $password=md5($_POST['password']);
 		$res=$obj->update_password($id,$email,$password);
 		// print_r($res);die;
 		if($res)
@@ -239,3 +244,43 @@
 				echo "soory";
 			}
 	}
+
+	//create new user admin//
+	if(isset($_POST['admin']))
+	{
+		$email=$_POST['email'];
+		$password=$_POST['password'];
+		$res=$obj->ADMININSERT($email,$password);
+		// print_r($res);die;
+		if($res)
+		{
+			header('location:adminview');
+		}
+		else
+		{
+			echo "sorry";
+		}
+	}
+
+
+//FOR WEBSITE SETTING//
+		if(isset($_POST['siteupdate']))
+		{
+			$sitename=$_POST['sitename'];
+			$footername=$_POST['footername'];
+			$logo=$_FILES['logo']['name'];
+			$tmp_name=$_FILES['logo']['tmp_name'];
+			$folder="logo/";
+			move_uploaded_file($tmp_name,$folder.$logo);
+			$res=$obj->INSERTSETTING($sitename,$footername,$logo);
+			 // print_r($res);die;
+			if($res)
+
+			{
+				header('location: ../public/navbar.php');
+			}
+			else
+			{
+				echo "try again";
+			}
+		}	
