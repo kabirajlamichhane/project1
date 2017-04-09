@@ -1,7 +1,9 @@
 body
 	{
 		background-image: url('../../image/n.jpg');
+		/*background-repeat: no-repeat;*/
 		background-image: cover;
+		/*background-color: black;*/
 		
 	}
 .jumbotron
@@ -9,7 +11,8 @@ body
 		width: 1200px;
 		height: 50px;
 		padding-top: 10px;
-		background-color: rgba(0,0,0,0.5);
+		/*background-color: rgba(0,0,0,0.5);*/
+		background-color: black;
 	}
 button[type="button"]
 	{

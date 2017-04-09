@@ -1,4 +1,5 @@
 <?php
+  // include('siteurl.php');
   include('slider.php');
   session_start();
 
@@ -15,9 +16,9 @@
 <html>
 <head>
   <title>well-come to multiple view  </title>
-  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">;
-  <script src="static/js/jquery-3.1.1.min.js"></script>
-  <script src="static/js/bootstrap.min.js"  ></script>
+  <link rel="stylesheet" type="text/css" href=""<?php echo siteurl();?>admin/static/css/bootstrap.min.css">;
+  <script src=""<?php echo siteurl();?>admin/static/js/jquery-3.1.1.min.js"></script>
+  <script src=""<?php echo siteurl();?>admin/static/js/bootstrap.min.js"  ></script>
 </head>
 <body>
       <form method="post" action="" enctype="mutipart/form-data">

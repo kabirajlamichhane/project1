@@ -7,14 +7,17 @@ session_start();
 		header('location:index.php');
 	}
 ?>
+<?php
+	  // include('siteurl.php');
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>wellcome to pageview</title>
-	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">;
-	<script src="static/js/jquery-3.1.1.min.js"></script>
-    <script src="static/js/bootstrap.min.js"  ></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo siteurl();?>admin/static/css/bootstrap.min.css">;
+	<script src="<?php echo siteurl();?>admin/static/js/jquery-3.1.1.min.js"></script>
+    <script src="<?php echo siteurl();?>admin/static/js/bootstrap.min.js"  ></script>
 	<!-- <script src="delscript.js"></script> -->
 </head>
 <body>
@@ -52,7 +55,7 @@ session_start();
 			?>
 
  		 </table><br><br/>
- 		  <a href="multipleimage.php" class="btn btn-warning">IMAGE COLLECTION</a>
+ 		  <a href="<?php echo siteurl();?>admin/multipleimage.php" class="btn btn-warning">IMAGE COLLECTION</a>
  	</div>	  
  	</form>
 </body>

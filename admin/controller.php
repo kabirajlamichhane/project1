@@ -266,21 +266,24 @@
 //FOR WEBSITE SETTING//
 		if(isset($_POST['siteupdate']))
 		{
-			$sitename=$_POST['sitename'];
-			$footername=$_POST['footername'];
-			$logo=$_FILES['logo']['name'];
-			$tmp_name=$_FILES['logo']['tmp_name'];
-			$folder="logo/";
-			move_uploaded_file($tmp_name,$folder.$logo);
-			$res=$obj->INSERTSETTING($sitename,$footername,$logo);
-			 // print_r($res);die;
-			if($res)
+				
+				$sitename=$_POST['sitename'];
+				$footername=$_POST['footername'];
+				// echo $footername;die;
+				$logo=$_FILES['logo']['name'];
+				$tmp_name=$_FILES['logo']['tmp_name'];
+				$folder="logo/";
+				move_uploaded_file($tmp_name,$folder.$logo);
+				$res=$obj->INSERTSETTING(1,$sitename,$footername,$logo);
+				// print_r($res);die;
+				if($res)
 
-			{
-				header('location: ../public/navbar.php');
-			}
-			else
-			{
-				echo "try again";
-			}
+				{
+					header('location: ../public/index.php');
+				}
+				else
+				{
+					echo "plz";
+				}
+			
 		}	

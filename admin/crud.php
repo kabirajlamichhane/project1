@@ -143,11 +143,20 @@
       }
 
       //for site update setting//
-      public function INSERTSETTING($sitename,$footername,$logo)
+      public function INSERTSETTING($id,$sitename,$footername,$logo)
       {
-        $sql="INSERT INTO setting(`sitename`,`footername`,`logo`)values('$sitename','$footername','$logo')";
+        $sql="INSERT INTO setting(`id`,`sitename`,`footername`,`logo`) values($id,'$sitename','$footername','$logo')
+        ON DUPLICATE KEY UPDATE id=$id,sitename='$sitename',footername='$footername',logo='$logo'";
         $result=$this->conn->query($sql);
-       
         return $result;
+        // print_r($result);die;
       }
+
+      // public function UPDATESETTING($sitename,$footername,$logo)
+      // {
+      //   $sql="UPDATE setting SET WHERE sitename='$sitename',footername='$footername' AND logo='$logo'";
+      //   $result=$this->conn->query($sql);
+      //   // print_r($result);die;
+      //   return $result;
+      // }
 	 }

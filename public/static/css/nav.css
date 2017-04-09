@@ -4,11 +4,24 @@
 		padding: 0px;
 
 	}
-.content1
+#content1
 	{
-		
-		height: 1000px;
+		background-color: black;
+		height: 600px;
 		padding: 10px;
 		margin: -22px;
 		margin-right: auto;
+		
 	}
+
+	ul li a{
+		color: white;
+	}
+.col-sm-10
+	{
+		background-color: white;
+	}	
+#con
+{
+	background-color: white;
+}

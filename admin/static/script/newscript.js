@@ -1,7 +1,7 @@
 function validation()
  {
 	var title =document.getElementById('title').value;
-	var content =document.getElementById('content').value;
+	var content =CKEDITOR.instances.content.getdata();
 	if(title == "" || content == "")
 	{
 		alert('title is mandatory');
@@ -9,3 +9,4 @@ function validation()
 		return false;
 	}
 }
+

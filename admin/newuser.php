@@ -1,4 +1,5 @@
 <?php
+  // include('siteurl.php');
   include('slider.php');
 ?>
 
@@ -6,11 +7,11 @@
 <html>
 <head>
   <title>create new user </title>
-      <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="<?php echo siteurl();?>admin/static/css/bootstrap.min.css">
       <!-- <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
-      <script src="static/js/jquery-3.1.1.min.js"></script>
-      <script src="static/js/bootstrap.min.js"  ></script>
-      <script src="static/script/script.js"></script>
+      <script src="<?php echo siteurl();?>admin/static/js/jquery-3.1.1.min.js"></script>
+      <script src="<?php echo siteurl();?>admin/static/js/bootstrap.min.js"  ></script>
+      <script src="<?php echo siteurl();?>admin/static/script/script.js"></script>
 </head>
 <body>
   <div class="container">

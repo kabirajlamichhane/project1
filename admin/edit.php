@@ -1,13 +1,15 @@
 <?php
+	// include('siteurl.php');
 	include('slider.php');
-	 $conn = new mysqli("localhost","root","",100);
+	$conn = new mysqli("localhost","root","",100);
 	
-	 
-	 $id=$_GET['edit_id'];
-	 $sql= "SELECT * FROM pages where id='$id'";
-	 $res=mysqli_query($conn,$sql);
-	 $result=mysqli_fetch_assoc($res);
-	
+	if(isset($_GET['edit_id']))
+	{
+		$id=$_GET['edit_id'];
+		$sql= "SELECT * FROM pages where id='$id'";
+		$res=mysqli_query($conn,$sql);
+		$result=mysqli_fetch_assoc($res);
+	}
 ?>
 
 
@@ -15,8 +17,8 @@
 <html>
 <head>
 	<title>new page</title>
-	<script src="JS/newscript.js"></script>
-	<script src="ckeditor/ckeditor.js"></script>
+	<script src="<?php echo siteurl();?>admin/JS/newscript.js"></script>
+	<script src="<?php echo siteurl();?>admin/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<form method="post" action="controller.php?edit_id=<?php echo $id; ?>" enctype="multipart/form-data" onsubmit= "return validation()">
@@ -24,7 +26,7 @@
 	<div class="container">
 	<input type="hidden" name="id" value="<?php echo $id?>">
 	TITLE:
-	&nbsp &nbsp &nbsp &nbsp<input name="title"  value="<?php echo  $result['title']; ?>" ><br />
+	&nbsp &nbsp &nbsp &nbsp<input name="title"  value="<?php echo $result['title']; ?>" ><br />
 	CONTENT:
 	<textarea name="content" rows="5" cols="50" ><?php echo  $result['content']; ?></textarea><br />
 	<input type="file" name="image" class="btn btn-warning" value="<?php echo  $result['image']; ?>"/><br/>

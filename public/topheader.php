@@ -9,31 +9,17 @@
 ?>
 
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title></title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-  <script src="static/js/jquery-3.1.1.min.js"></script>
-  <script src="static/js/bootstrap.min.js"  ></script>
-      
-</head>
-<body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
+    <div class="navbar-header">
     
-      <li><a href="navbar.php"><img src="../admin/logo/<?php echo $res['logo']; ?>" width="40px" height="40px;">eagle</a></li>
-      <li><a href="index.php"><?php echo $res['sitename']; ?></a></li>
+      <a class="navbar-brand" href="navbar.php"><img src="../admin/logo/<?php echo $res['logo']; ?>" width="25px" height="25px;"></a>
+      <a class="navbar-brand" href="http://eaglevisionit.com/"><?php echo $res['sitename']; ?></a>
     
     
-    </ul>
+    </div>
   </div>
 </nav>
   
-</body>
-</html>
+
 		

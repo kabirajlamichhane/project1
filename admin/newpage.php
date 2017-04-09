@@ -1,20 +1,21 @@
 <?php
-	 include('slider.php');
+	// include('siteurl.php');
+	include('slider.php');
 	if(isset($_GET['error']) && $_GET['error']==1)
-		echo "Please enter all the fields";
+	echo "Please enter all the fields";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>new page</title>
-		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-      	<link rel="stylesheet" type="text/css" href="static/css/newpagestyle.css">
-      	<script src="static/js/jquery-3.1.1.min.js"></script>
-      	<script src="static/js/bootstrap.min.js"  ></script>
-      	<script src="static/script/script.js"></script>
-		<script src="static/script/newscript.js"></script>
-		<script src="ckeditor/ckeditor.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo siteurl();?>admin/static/css/bootstrap.min.css">
+      	<link rel="stylesheet" type="text/css" href="<?php echo siteurl();?>admin/static/css/newpagestyle.css">
+      	<script src="<?php echo siteurl();?>admin/static/js/jquery-3.1.1.min.js"></script>
+      	<script src="<?php echo siteurl();?>admin/static/js/bootstrap.min.js"  ></script>
+      	<script src="<?php echo siteurl();?>admin/static/script/script.js"></script>
+		<script src="<?php echo siteurl();?>admin/static/script/newscript.js"></script>
+		<script src="<?php echo siteurl();?>admin/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<form method="post" action="controller.php" enctype="multipart/form-data" onsubmit= "return validation()">

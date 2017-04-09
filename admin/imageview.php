@@ -1,5 +1,6 @@
 <?php
-      // include('slider.php');
+      include('slider.php');
+       // include('siteurl.php');
 
 ?>
 
@@ -11,10 +12,10 @@
 <html>
 <head>
   <title>well-come to imagemanager </title>
-   <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-  <script src="static/js/jquery-3.1.1.min.js"></script>
-  <script src="static/js/bootstrap.min.js"  ></script>
-  <script src="static/script/script.js"></script>
+   <link rel="stylesheet" type="text/css" href="<?php echo siteurl();?>admin/static/css/bootstrap.min.css">
+  <script src="<?php echo siteurl();?>admin/static/js/jquery-3.1.1.min.js"></script>
+  <script src="<?php echo siteurl();?>admin/static/js/bootstrap.min.js"  ></script>
+  <script src="<?php echo siteurl();?>admin/static/script/script.js"></script>
 </head>
 <body>
       <form method="post" action="" enctype="mutipart/form-data"><br><br />
