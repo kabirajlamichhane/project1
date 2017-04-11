@@ -11,29 +11,38 @@
 <html>
 <head>
   <title>navbar</title>
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript" type="text/javascript"></script>
+
+
+
+
+
       <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="static/css/nav.css">
       <link rel="stylesheet" type="text/css" href="static/css/footer.css">
       <link rel="stylesheet" type="text/css" href="static/css/topheader.css">
+
       <script src="static/js/jquery-1.6.1.min.js"></script>
       <script src="static/js/bootstrap.min.js"></script>
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
       <script src="static/js/jquery.prettyPhoto.js" type="text/javascript"></script>
       <link rel="stylesheet" href="static/css/prettyPhoto.css" type="text/css" media="screen" />
-      <script src="static/script/validation.js"></script>
     
 </head>
 
 <body>
-  <form method="post" action="testcontroller.php" onsubmit="return firstnamevalidation()" >
+  <!--  -->
   <div class="container-fluid content" id="con">
     <div class="col-sm-2" id="content1">
       <ul class="nav nav-pills nav-stacked">
        <?php while(  $res=mysqli_fetch_assoc($result)){ ?>
-        <li><a href="index.php?title_id=<?php  echo $res['id'] ; ?>" ><?php  echo $res['title']; ?></a></li>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="test.php?title_id=<?php  echo $res['id'] ; ?>"  ><?php  echo $res['title']; ?></a></li>
         <?php } ?>    
 
-       
+    
+
+
       </ul>
     </div>
      
@@ -68,7 +77,7 @@
     });
   </script>
 
-</form>
+
 </body>
 </html>
 

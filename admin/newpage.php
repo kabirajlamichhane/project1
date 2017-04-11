@@ -1,9 +1,20 @@
 <?php
+      
+   
+        $conn=new mysqli("localhost","root","","100");
+        $sql="SELECT * FROM pages";
+       $result=mysqli_query($conn,$sql);
+      
+?>
+
+<?php
 	// include('siteurl.php');
+	
 	include('slider.php');
 	if(isset($_GET['error']) && $_GET['error']==1)
 	echo "Please enter all the fields";
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -22,17 +33,35 @@
 	<!-- TITLE:
 	<input type="text" name="title"> <br> -->
 	<div class="container">
-	<div class="form-group">
-	<h2>create a new page</h2>
-      <label for="">title:</label>
-      <input type="text"  name="title" id="title" class="form-control" id="usr">
-    </div>
+		<div class="form-group">
+			<h2>create a new page</h2>
+      		<label for="">title:</label>
+      		<input type="text"  name="title" id="title" class="form-control" id="usr">
+    	</div>
 	
-	<div class="form-group">
-      <label for="">Content:</label>
-      <textarea class="form-control"  name="content"  id="content" rows="5" id="comment"></textarea>
-    </div>
-	<input type="file" name="image" class="btn btn-warning"><br><br/>
+		<div class="form-group">
+      		<label for="">Content:</label>
+      		<textarea class="form-control"  name="content"  id="content" rows="5" id="comment"></textarea>
+    	</div>
+		<input type="file" name="image" class="btn btn-warning"><br><br/>
+
+		 <div class="container"> 
+		 <!-- <label>parent_id</label> -->
+			<div class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">parent_id</div>
+				<select name="parent_id">
+					<option></option>
+					<?php 
+					
+        			
+					 while($res=mysqli_fetch_assoc($result))
+					{
+						echo "<option>{$res['title']}</option> ";
+					}
+					?>	
+				</select>
+		</div><br><br />  
+ 
+
 	<input type="submit" name="submit" value="ADD" class="btn btn-primary">	
 	</div>
 	</form>

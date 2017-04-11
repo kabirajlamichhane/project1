@@ -33,6 +33,7 @@ session_start();
 	 		<th>image</th>
 	 		<th>EDIT</th>
 	 		<th>DELETE</th>
+	 		<th>parent_id</th>
  		</tr>
 	
             <?php
@@ -49,7 +50,7 @@ session_start();
  		     			echo "<td><img src='image/$row[image]' width='300px' height='150px'</td>";
   		     			echo"<td><a href='edit.php?edit_id=$row[id]' class='btn btn-info'>EDIT</a></td>" ;
  		     			echo"<td><a href='controller.php?del_id=$row[id]' class='btn btn-danger'onclick=\"return confirm('are u sure')\">delete</a></td>";
- 		     			
+ 		     			 echo "<td>".$row['parent_id']."</td>";
  		     			echo"</tr>";
  					}  
 			?>

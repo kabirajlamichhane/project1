@@ -58,7 +58,22 @@
 	// start addnew page//
 	if(isset($_POST['submit']))
 	{	
+		
 		$title =$_POST['title'];
+		$parent_title=$_POST['parent_id'];
+
+		if($parent_title == "")
+		{
+			$parent_id = -1;
+
+		}
+		else
+		{
+			$result = $obj->pagesid($parent_title);
+			$page = mysqli_fetch_assoc($result);
+			$parent_id = $page['id'];
+
+		}
 		$content =$_POST['content'];
 
 		$image=$_FILES['image']['name'];
@@ -69,15 +84,15 @@
 	
 		if(!empty($title) && !empty($content) && !empty($image))
 	 	{
-			$res=$obj->INSERT($title,$content,$image);
-			 // print_r($res);die;
+			$res=$obj->INSERT($parent_id,$title,$content,$image);
+			     // print_r($res);die;
 			if($res)
 			{
 			 	header('location:pageview.php');
 			}
 			else
 			{
-				header('location:newpage.php');
+				die(mysqli_error($obj));
 			}
      	}
 			else
@@ -285,5 +300,8 @@
 				{
 					echo "plz";
 				}
+
+
 			
 		}	
+

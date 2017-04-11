@@ -25,9 +25,9 @@
      	}
 
      	//start manager addnew pagge//
-     	public function INSERT($title,$content,$image)
+     	public function INSERT($parent_id,$title,$content,$image)
     	{
-         	 $sql="INSERT INTO pages(`title`,`content`,`image`) VALUES('$title','$content','$image')";
+         	 $sql="INSERT INTO pages(`parent_id`,`title`,`content`,`image`) VALUES($parent_id,'$title','$content','$image')";
           	$result=$this->conn->query($sql);
           	return $result;
      	}
@@ -152,11 +152,19 @@
         // print_r($result);die;
       }
 
-      // public function UPDATESETTING($sitename,$footername,$logo)
-      // {
-      //   $sql="UPDATE setting SET WHERE sitename='$sitename',footername='$footername' AND logo='$logo'";
-      //   $result=$this->conn->query($sql);
-      //   // print_r($result);die;
-      //   return $result;
-      // }
-	 }
+      
+
+     //for admin choes page//
+      public function pagesid($title)
+      {
+         $query = "SELECT * FROM pages WHERE title = '{$title}'";
+            
+         $result=$this->conn->query($query);
+
+        return $result;
+
+      }
+  } 
+
+
+    
