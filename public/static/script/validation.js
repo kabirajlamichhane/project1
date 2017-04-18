@@ -1,5 +1,6 @@
-function allavlidation()
+function allvalidation()
 {
+	// alert("hello");
 	var firstname=document.getElementById('fname').value;
 	if(firstname == "")
 	{

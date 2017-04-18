@@ -4,13 +4,29 @@
 		padding: 0px;
 
 	}
+	
+.container-fluid {
+	padding: 0;
+}
+
+#main{
+	
+	overflow-y: scroll;
+	position: fixed;
+	top: 50px;
+	bottom: 0;
+	height: 100%;
+
+	/*position: fixed;*/
+}
 #content1
 	{
 		background-color: black;
-		height: 1255px;
-		padding: 10px;
-		margin: -22px;
-		margin-right: auto;
+		height: 100%;
+		
+		top: 50px;
+		bottom: 0px;
+		position: fixed;
 		
 	}
 
@@ -20,8 +36,13 @@
 .col-sm-10
 	{
 		background-color: white;
+		margin-left: 250px;
 	}	
 #con
 {
 	background-color: white;
+}
+
+#content{
+	padding-bottom: 30px;
 }

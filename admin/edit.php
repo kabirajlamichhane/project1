@@ -3,13 +3,12 @@
 	include('slider.php');
 	$conn = new mysqli("localhost","root","",100);
 	
-	if(isset($_GET['edit_id']))
-	{
+	
 		$id=$_GET['edit_id'];
 		$sql= "SELECT * FROM pages where id='$id'";
 		$res=mysqli_query($conn,$sql);
 		$result=mysqli_fetch_assoc($res);
-	}
+	
 ?>
 
 

@@ -15,14 +15,16 @@ p a
 	{
 		background-color: #000000;
 		color: blue;
-		margin-top:10px;
-		padding-top: 10px; 
+		position: fixed;
+		bottom: 0;
+		right:0;
+		left: 0;
+
 	}	
 .bottom-footer
 	{
 		border-top: 2px solid red;
-		margin-top: 10px;
-		padding-top: 10px;
+
 		color: white;
 	}
 .footer-nav 

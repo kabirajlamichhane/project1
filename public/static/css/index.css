@@ -1,0 +1,41 @@
+*
+	{
+		margin: 0;
+		padding: 0;
+	}
+#search
+	{
+		margin-left: 1098px;
+		width: 256px;
+		margin-top: 8px;
+
+	}	
+#submit
+	{
+		margin-left: 1098px;
+		width: 40px;
+		margin-top: 8px;
+	}
+#content1
+	{
+		background-color: black;
+		height: 100%;
+		
+		top: 50px;
+		bottom: 0px;
+		position: fixed;
+		
+	}
+ul li a
+	{
+		color: white;
+	}	
+col-sm-10
+	{
+		background-color: white;
+		margin-left: 250px;
+	}	
+#con
+{
+	background-color: white;
+}
