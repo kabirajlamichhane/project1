@@ -1,3 +1,0 @@
-RewriteEngine on
-RewriteRule ^page/([0-9]+) index.php?title_id=$1 [NC,L]
-
